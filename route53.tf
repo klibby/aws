@@ -3,6 +3,20 @@ resource "aws_route53_zone" "electric-mayhem" {
     name = "electric-mayhem.org"
 }
 
+# NS records
+resource "aws_route53_record" "ns" {
+    zone_id = "${aws_route53_zone.electric-mayhem.zone_id}"
+    name = "${aws_route53_zone.electric-mayhem.name}"
+    type = "NS"
+    ttl = "30"
+    records = [
+        "${aws_route53_zone.electric-mayhem.name_servers.0}",
+        "${aws_route53_zone.electric-mayhem.name_servers.1}",
+        "${aws_route53_zone.electric-mayhem.name_servers.2}",
+        "${aws_route53_zone.electric-mayhem.name_servers.3}"
+    ]
+}
+
 # MX records
 resource "aws_route53_record" "mx" {
     zone_id = "${aws_route53_zone.electric-mayhem.zone_id}"
