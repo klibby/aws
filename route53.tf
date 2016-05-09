@@ -47,7 +47,7 @@ resource "aws_route53_record" "planet10" {
     name = "planet10.electric-mayhem.org"
     type = "A"
     ttl = "60"
-    records = ["162.243.86.29"]
+    records = ["162.243.86.71"]
 }
 # whorfin 162.243.89.29
 
