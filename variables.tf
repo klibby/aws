@@ -1,6 +1,5 @@
 variable "account_id" {}
-variable "access_key" {}
-variable "secret_key" {}
+variable "profile" {}
 variable "aws_region" {
     description = "The AWS region to create things in."
     default = "us-east-1"

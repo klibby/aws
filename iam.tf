@@ -2,10 +2,10 @@
 resource "aws_iam_user" "fubar" {
     name = "fubar"
 }
-resource "aws_iam_access_key" "fubar-key" {
-    user = "fubar"
-    depends_on = ["aws_iam_user.fubar"]
-}
+#resource "aws_iam_access_key" "fubar-key" {
+#    user = "fubar"
+#    depends_on = ["aws_iam_user.fubar"]
+#}
 
 # Groups
 resource "aws_iam_group" "admin" {
