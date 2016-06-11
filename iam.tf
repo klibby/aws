@@ -31,11 +31,11 @@ resource "aws_iam_policy" "require_mfa-policy" {
 }
 
 # Attach MFA policy to admin group
-#resource "aws_iam_policy_attachment" "require_mfa-attach" {
-#    name = "require_mfa-attach"
-#    groups = ["${aws_iam_group.admin-group.name}"]
-#    policy_arn = "${aws_iam_policy.require_mfa-policy.arn}"
-#}
+resource "aws_iam_policy_attachment" "require_mfa-attach" {
+    name = "require_mfa-attach"
+    groups = ["${aws_iam_group.admin.name}"]
+    policy_arn = "${aws_iam_policy.require_mfa-policy.arn}"
+}
 
 # Attach AWS::AdministratorAccess policy to admin group
 resource "aws_iam_policy_attachment" "admin-attach" {
